@@ -31,10 +31,10 @@ def encrypt(recipients):
                         output = current_file + gpg_extention)
 
                     if len(sys.argv) == 3 and sys.argv[2] == '-d':
-                        deleteOrginalFileIfRequired(status, file, current_file)   
+                        deleteOrginalFile(status, file, current_file)   
     os.system('tree')
 
-def deleteOrginalFileIfRequired(status, file, current_file):
+def deleteOrginalFile(status, file, current_file):
     if status.ok == True and status.status == 'encryption ok':
         print('Encryption done. Deleting unencrypted file:', file)
         os.remove(current_file)
