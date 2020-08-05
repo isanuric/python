@@ -17,8 +17,8 @@ else:
 gpg = gnupg.GPG()
 
 
-def encrypt():
-    for root, dirs, files in os.walk(path, recipients):
+def encrypt(recipients):
+    for root, dirs, files in os.walk(path):
         for file in files:
             current_file = os.path.join(root, file)
             with open(current_file, 'rb') as cur_file:
