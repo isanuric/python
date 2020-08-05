@@ -43,7 +43,7 @@ def deleteOrginalFile(status, file, current_file):
 
 def help():
     print('usage: python3 encrypt_directory <path> [-d]')
-    print
+    print()
     print(' -d  delete original file after successful encryption.')   
 
 
