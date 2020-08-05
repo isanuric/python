@@ -31,10 +31,10 @@ def encrypt(recipients):
                         output = current_file + gpg_extention)
 
                     if len(sys.argv) == 3 and sys.argv[2] == '-d':
-                        deleteOrginalFile(status, file, current_file)   
+                        deleteOriginalFile(status, file, current_file)   
     os.system('tree')
 
-def deleteOrginalFile(status, file, current_file):
+def deleteOriginalFile(status, file, current_file):
     if status.ok == True and status.status == 'encryption ok':
         print('Encryption done. Deleting unencrypted file:', file)
         os.remove(current_file)
@@ -42,13 +42,12 @@ def deleteOrginalFile(status, file, current_file):
         print ('stderr: ', status.stderr)    
 
 def help():
-    print('usage: python3 encrypt_directory <path> [-d]')
-    print()
-    print(' -d  delete original file after successful encryption.')   
+    print('usage: python3 encrypt_directory.py <path> [-d]\n')
+    print('   -d  delete original file after successful encryption.\n')   
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 3 and sys.argv[2] == '--help':
+    if len(sys.argv) == 2 and sys.argv[1] == '--help':
         help()
-
-    encrypt() 
+    else:
+        encrypt() 
