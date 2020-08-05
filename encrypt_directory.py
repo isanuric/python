@@ -7,7 +7,7 @@ from os.path import splitext
 
 status = ""
 gpg_extention = '.gpg'
-recipients = ['ehsan.salmani@gmx.de']
+recipients = ['<your-mail>@gmx.de']
 
 if sys.argv[1] == '.':
     path = os.getcwd()
