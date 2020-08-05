@@ -41,7 +41,14 @@ def deleteOrginalFile(status, file, current_file):
     else:
         print ('stderr: ', status.stderr)    
 
-   
+def help():
+    print('usage: python3 encrypt_directory <path> [-d]')
+    print
+    print(' -d  delete original file after successful encryption.')   
+
 
 if __name__ == "__main__":
+    if len(sys.argv) == 3 and sys.argv[2] == '--help':
+        help()
+
     encrypt() 
