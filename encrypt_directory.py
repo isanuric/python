@@ -7,6 +7,7 @@ from os.path import splitext
 
 status = ""
 gpg_extention = '.gpg'
+recipients = ['<your-email>@gmx.de']
 
 if sys.argv[1] == '.':
     path = os.getcwd()
@@ -17,22 +18,21 @@ gpg = gnupg.GPG()
 
 
 def encrypt():
-    for root, dirs, files in os.walk(path):
+    for root, dirs, files in os.walk(path, recipients):
         for file in files:
             current_file = os.path.join(root, file)
             with open(current_file, 'rb') as cur_file:
                 if (not current_file.endswith(gpg_extention)):
+                    
                     status = gpg.encrypt_file(
                         cur_file,
-                        recipients = ['ehsan.salmani@gmx.de'],
+                        recipients = recipients,
                         sign = True,
                         output = current_file + gpg_extention)
 
                     if len(sys.argv) == 3 and sys.argv[2] == '-d':
                         deleteOrginalFileIfRequired(status, file, current_file)   
-
     os.system('tree')
-
 
 def deleteOrginalFileIfRequired(status, file, current_file):
     if status.ok == True and status.status == 'encryption ok':
