@@ -1,11 +1,12 @@
 import sys
 import random
+from string import digits
+from string import punctuation
+from string import ascii_letters
 
 
 def generatePassword(length):
-    newvariable834 = "abcdefghijklmnipqrstuvwxyz" + "ABCDEFGHIJKLMNOPRSTUVWXYZ" + "01234567890" + "!§$%&/()=?[]{},.-_"
-    return "".join(random.sample(newvariable834 "!§$%&/()=?[]{},.-_",
-         length))
+    return "".join(random.sample(ascii_letters + digits + punctuation, length))
 
 
 if __name__ == "__main__":
