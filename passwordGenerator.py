@@ -3,9 +3,9 @@ import random
 
 
 def generatePassword(length):
-    print("".join(random.sample(
+    return "".join(random.sample(
         "abcdefghijklmnipqrstuvwxyz" + "ABCDEFGHIJKLMNOPRSTUVWXYZ" + "01234567890" + "!§$%&/()=?[]{},.-_",
-         length)))
+         length))
 
 
 if __name__ == "__main__":
@@ -19,4 +19,4 @@ if __name__ == "__main__":
 
     print('\nPassword length in each line: %s\n' % length)
     for i in range(0, 10):
-        generatePassword(length)    
+        print(generatePassword(length))
