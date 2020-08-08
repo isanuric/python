@@ -3,8 +3,8 @@ import random
 
 
 def generatePassword(length):
-    return "".join(random.sample(
-        "abcdefghijklmnipqrstuvwxyz" + "ABCDEFGHIJKLMNOPRSTUVWXYZ" + "01234567890" + "!§$%&/()=?[]{},.-_",
+    newvariable834 = "abcdefghijklmnipqrstuvwxyz" + "ABCDEFGHIJKLMNOPRSTUVWXYZ" + "01234567890" + "!§$%&/()=?[]{},.-_"
+    return "".join(random.sample(newvariable834 "!§$%&/()=?[]{},.-_",
          length))
 
 
