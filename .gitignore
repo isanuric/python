@@ -1,3 +1,8 @@
 properties.conf
 test/
 .vscode/
+__pycache__/
+
+*.mp4
+*.mp3
+*.pyc
